@@ -1,0 +1,10 @@
+<!-- ventas/eliminar_orden.html -->
+<h1>Eliminar Orden</h1>
+<p>¿Estás seguro de que quieres eliminar la orden <strong>{{ orden.id }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+
+<a href="{% url 'listar_ordenes' %}">Cancelar</a>

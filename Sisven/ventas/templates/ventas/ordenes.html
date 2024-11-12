@@ -1,0 +1,28 @@
+{% extends "ventas/base.html" %}
+
+{% block title %}Lista de Órdenes{% endblock %}
+
+{% block content %}
+<h2>Lista de Órdenes</h2>
+<table>
+    <tr>
+        <th>Cliente</th>
+        <th>Productos</th>
+        <th>Fecha</th>
+        <th>Total</th>
+    </tr>
+    {% for orden in ordenes %}
+    <tr>
+        <td>{{ orden.Cliente.nombre }} {{ orden.Cliente.apellido }}</td>
+        <td>
+            {% for producto in orden.Producto.all %}
+                {{ producto.nombre }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </td>
+        <td>{{ orden.fecha }}</td>
+        <td>{{ orden.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'crear_orden' %}">Agregar Orden</a>
+{% endblock %}

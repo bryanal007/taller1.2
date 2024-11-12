@@ -1,0 +1,8 @@
+<!-- ventas/editar_producto.html -->
+<h1>Editar Producto</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar cambios</button>
+</form>

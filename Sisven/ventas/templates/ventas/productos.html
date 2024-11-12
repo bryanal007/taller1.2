@@ -1,0 +1,24 @@
+{% extends "ventas/base.html" %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<h2>Lista de Productos</h2>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoría</th>
+    </tr>
+    {% for producto in productos %}
+    <tr>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.stock }}</td>
+        <td>{{ producto.Categoria.nombre }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'crear_producto' %}">Agregar Producto</a>
+{% endblock %}
