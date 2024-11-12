@@ -16,4 +16,7 @@ urlpatterns = [
     path('ordenes/crear/', views.crear_orden, name='crear_orden'),
     path('ordenes/editar/<int:id>/', views.editar_orden, name='editar_orden'),
     path('ordenes/eliminar/<int:id>/', views.eliminar_orden, name='eliminar_orden'),
+
+    # Ruta para la página principal de ventas
+    path('ventas/', views.ventas, name='ventas'),
 ]

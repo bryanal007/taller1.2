@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Bienvenido al Sistema de Ventas</h1>
+    <p>A continuación, podrás gestionar productos, categorías y órdenes.</p>
+    
+    <!-- Enlaces a las páginas de productos, categorías y órdenes -->
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Productos</h3>
+            <ul>
+                <li><a href="{% url 'listar_productos' %}">Ver productos</a></li>
+                <li><a href="{% url 'crear_producto' %}">Crear nuevo producto</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="{% url 'crear_categoria' %}">Crear nueva categoría</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <h3>Órdenes</h3>
+            <ul>
+                <li><a href="{% url 'listar_ordenes' %}">Ver órdenes</a></li>
+                <li><a href="{% url 'crear_orden' %}">Crear nueva orden</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

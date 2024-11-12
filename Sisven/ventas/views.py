@@ -120,3 +120,9 @@ def crear_orden(request):
 def listar_ordenes(request):
     ordenes = Orden.objects.all()  # Asegúrate de que hay alguna lógica para obtener las órdenes
     return render(request, 'ventas/listar_ordenes.html', {'ordenes': ordenes})
+
+# Vista para la página principal de ventas
+@login_required
+@permission_required('ventas.view_orden', raise_exception=True)
+def ventas(request):
+    return render(request, 'ventas/index.html')  # Crea la plantilla 'index.html' para la página de ventas
