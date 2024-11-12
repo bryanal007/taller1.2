@@ -36,4 +36,4 @@ class Orden (models.Model):
 
     def __str__(self):
         # Utiliza 'self.Cliente' porque así está definido el campo en mayúscula
-        return f'Orden de {self.id} - Cliente: {self.Cliente.nombre}'
+        return f'Orden de {self.id} - Cliente: {self.Cliente.nombre}'   
